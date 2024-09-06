@@ -4,6 +4,7 @@ USERID=$(id -u)
 
 #echo "USER ID is: $USERID"
 
+#ne is special variable
 
 if [ $USERID -ne 0 ]
 then 
@@ -11,7 +12,7 @@ then
     exit 1
 fi
 
-dnf list installed git
+dnf list installed git #list all installed packages in git
 
 if [ $? -ne 0 ]
 then 
