@@ -20,7 +20,7 @@ then
     exit 1
 fi
 
-dnf list installed git #list all installed packages in git
+dnf list installed git 
 
 if [ $? -ne 0 ]
 then 
