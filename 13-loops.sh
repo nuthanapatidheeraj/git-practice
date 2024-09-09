@@ -1,6 +1,15 @@
 #!/bin/bash
 
-for i in {0..10} #0 to 10
-do
-  echo $i
-done  
+  
+for package in $@ #@referes to all the arguments passed to it
+do 
+    dnf list installed $package
+    if [ $? -ne 0 ]
+    then
+        echo "$package is not installed, going to install it.."
+        dnf install $package -y
+        validate $? "Installing $package"
+    else
+        echo "$package is already installed..nothing to do"
+    fi 
+done            
