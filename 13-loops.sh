@@ -2,6 +2,5 @@
 
 for i in {0..10} #0 to 10
 do
-  echo $id
+  echo $i
 done  
-
